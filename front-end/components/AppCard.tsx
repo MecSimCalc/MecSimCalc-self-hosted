@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import {
   Avatar,
   Box,
@@ -11,6 +10,7 @@ import {
   Skeleton,
   Stack,
   Typography,
+  styled,
 } from "@mui/material";
 import { get } from "lodash";
 import Link from "next/link";

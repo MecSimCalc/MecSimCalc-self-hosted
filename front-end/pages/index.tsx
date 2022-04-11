@@ -1,8 +1,8 @@
 import { Container, styled } from "@mui/material";
 import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
-import AppCard from "../components/AppCard/AppCard";
-import { App } from "../components/AppCard/types";
+import AppCard from "../components/AppCard";
+import { App } from "../components/types";
 import api from "./api/axios";
 
 const AppGallery = styled(Container)(({ theme }) => ({
@@ -12,7 +12,7 @@ const AppGallery = styled(Container)(({ theme }) => ({
   marginTop: "20px",
 }));
 
-export default function Home() {
+export default function HomePage() {
   const [apps, setApps] = useState<App[]>();
   const { enqueueSnackbar } = useSnackbar();
 

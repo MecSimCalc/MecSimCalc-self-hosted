@@ -24,7 +24,7 @@ def apps():
             with open(os.path.join(APPS_PATH, json_file), "r") as f:
                 data = json.load(f)
             metadata = {key: data.get(key) for key in ["name", "description", "author", "category", "tags", "favicon_image", "primary_image"]}
-            metadata["app_id"] = json_file  # the filename is the ID
+            metadata["app_id"] = os.path.splitext(json_file)[0]  # the filename is the ID with `.json`
             response.append(metadata)
         except json.JSONDecodeError as e:
             print(e)
@@ -106,6 +106,7 @@ def app(app_id):
                 "output_html",
             ]
         }
+        response["app_id"] = app_id
     elif request.method == "POST":
         response = run_code(data.get("code"))
     return jsonify(response), 200
