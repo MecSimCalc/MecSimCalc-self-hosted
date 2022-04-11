@@ -5,10 +5,13 @@ from flask import Flask, jsonify, request
 import os, json, io
 import traceback
 
+from flask_cors import CORS
+
 
 server = Flask(__name__)
-APPS_PATH = "../apps"
+CORS(server)
 
+APPS_PATH = "../apps"
 
 # GET: fetch all apps in `apps` folder
 @server.route("/apps", methods=["GET"])
@@ -20,7 +23,7 @@ def apps():
         try:
             with open(os.path.join(APPS_PATH, json_file), "r") as f:
                 data = json.load(f)
-            metadata = {key: data.get(key) for key in ["name", "description", "category", "tags", "primary_image"]}
+            metadata = {key: data.get(key) for key in ["name", "description", "author", "category", "tags", "favicon_image", "primary_image"]}
             metadata["app_id"] = json_file  # the filename is the ID
             response.append(metadata)
         except json.JSONDecodeError as e:

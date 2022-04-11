@@ -2,6 +2,7 @@ import { CssBaseline } from "@mui/material";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { SnackbarProvider } from "notistack";
+import Copyright from "../components/Copyright";
 import Navbar from "../components/Navbar/Navbar";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <CssBaseline />
       <Navbar />
       <Component {...pageProps} />
+      <Copyright />
     </SnackbarProvider>
   );
 }
