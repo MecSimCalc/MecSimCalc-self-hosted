@@ -1,4 +1,5 @@
 import { Container, styled } from "@mui/material";
+import { get } from "lodash";
 import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
 import AppCard from "../components/AppCard";
@@ -22,7 +23,9 @@ export default function HomePage() {
         const { data } = await api.get(`/apps`);
         setApps(data);
       } catch (e: any) {
-        enqueueSnackbar("Failed to fetch apps", { variant: "error" });
+        enqueueSnackbar(`Failed to fetch apps: ${get(e, "response.data")}`, {
+          variant: "error",
+        });
       }
     };
     if (!apps) fetchApps();

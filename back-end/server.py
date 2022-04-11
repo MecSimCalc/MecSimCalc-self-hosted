@@ -24,11 +24,11 @@ def apps():
             with open(os.path.join(APPS_PATH, json_file), "r") as f:
                 data = json.load(f)
             metadata = {key: data.get(key) for key in ["name", "description", "author", "category", "tags", "favicon_image", "primary_image"]}
+            metadata = {k: v for k, v in metadata.items() if v is not None}  # Remove None values
             metadata["app_id"] = os.path.splitext(json_file)[0]  # the filename is the ID with `.json`
             response.append(metadata)
         except json.JSONDecodeError as e:
-            print(e)
-            return f'"{json_file}" is not in a valid JSON format. Please fix this file', 500
+            print(f'"{json_file}" is not in a valid JSON format. Please fix this file')
 
     return jsonify(response), 200
 
@@ -106,6 +106,7 @@ def app(app_id):
                 "output_html",
             ]
         }
+        response = {k: v for k, v in response.items() if v is not None}  # Remove None values
         response["app_id"] = app_id
     elif request.method == "POST":
         response = run_code(data.get("code"))
