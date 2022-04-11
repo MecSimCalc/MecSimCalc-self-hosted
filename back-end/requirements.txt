@@ -1,1 +1,11 @@
 Flask==2.1.1
+
+numpy==1.20.3
+scipy==1.7.3
+sympy==1.9
+matplotlib==3.5.1
+pandas==1.3.5
+scikit-learn==1.0.2
+numba==0.54.1
+openpyxl==3.0.9
+Pillow==9.0.1
