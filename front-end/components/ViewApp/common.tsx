@@ -7,6 +7,7 @@ import { App } from "../types";
  * @returns initialValues
  */
 export const getInitialValues = (input_inputs: App["input_inputs"]) => {
+  if (!input_inputs) return {};
   return Object.keys(input_inputs).reduce((accum, key) => {
     const name = get(input_inputs, [key, "props", "name"]);
     if (isUndefined(name)) return accum;

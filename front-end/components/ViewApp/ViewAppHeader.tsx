@@ -22,8 +22,6 @@ interface Props {
 }
 
 export default function ViewAppHeader({ app }: Props) {
-  const { name, description, author, updated_at, created_on, category, tags } =
-    app;
   const [open, setOpen] = useState(false);
 
   return (
@@ -64,20 +62,20 @@ export default function ViewAppHeader({ app }: Props) {
           display="flex"
           sx={{ wordBreak: "break-word" }}
         >
-          {name}
+          {get(app, "name")}
         </Typography>
       </Grid>
       <Grid item xs={8} md={4}>
         <ListItem>
           <ListItemAvatar>
             <Avatar
-              alt={get(author, "username", "Unknown Author")}
-              src={get(author, "image")}
+              alt={get(app, "author.username", "Unknown Author")}
+              src={get(app, "author.image")}
             />
           </ListItemAvatar>
           <ListItemText
-            primary={get(author, "username", "Unknown Author")}
-            secondary={`Updated at: ${formatDate(updated_at)}`}
+            primary={get(app, "author.username", "Unknown Author")}
+            secondary={`Updated at: ${formatDate(get(app, "updated_at"))}`}
           />
         </ListItem>
       </Grid>
@@ -102,7 +100,10 @@ export default function ViewAppHeader({ app }: Props) {
         <Collapse in={open} timeout="auto" sx={{ overflow: "hidden" }}>
           <Grid container px="40px">
             <Grid item xs={7} pr="50px" sx={{ overflowWrap: "break-word" }}>
-              <ListItemText primary="Description" secondary={description} />
+              <ListItemText
+                primary="Description"
+                secondary={get(app, "description")}
+              />
             </Grid>
             <Grid
               item
@@ -117,18 +118,18 @@ export default function ViewAppHeader({ app }: Props) {
               <div>
                 <ListItemText
                   primary="Created on"
-                  secondary={formatDate(created_on)}
+                  secondary={formatDate(get(app, "created_on"))}
                 />
                 <ListItemText primary="Category" />
                 <Chip
-                  label={get(category, "name")}
+                  label={get(app, "category.name")}
                   size="small"
                   sx={{ m: "2px" }}
                 />
               </div>
               <div>
                 <ListItemText primary="Tags" />
-                {tags.map((tag, i) => (
+                {get(app, "tags", []).map((tag, i) => (
                   <Chip
                     key={`tag-${i}`}
                     label={tag.name}

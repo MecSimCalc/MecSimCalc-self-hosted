@@ -44,7 +44,11 @@ export default function AppCard({ app }: { app?: App }) {
       <Link href={`/app/${get(app, "app_id")}`} passHref>
         <CardActionArea sx={{ height: "100%" }}>
           <CardMedia
-            image={get(app, "primary_image")}
+            image={get(
+              app,
+              "primary_image",
+              "https://source.unsplash.com/random/" // fallback to random image
+            )}
             sx={{ height: "70px" }}
           />
           <Avatar
