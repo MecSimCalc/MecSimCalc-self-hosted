@@ -64,9 +64,11 @@ export function renderHTML({
 export default function ViewAppOutputs({
   app: { output_html },
   innerRef,
-  data: { outputs, stdout, error },
+  data,
   ...rest
 }: Props) {
+  if (!data) return null;
+  const { outputs, stdout, error } = data;
   const html = renderHTML({ html: output_html, context: { outputs } });
 
   return (

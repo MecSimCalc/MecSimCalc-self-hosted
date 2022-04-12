@@ -81,9 +81,7 @@ export default function ViewApp({ app }: Props) {
                 {!!isSubmitting ? <CircularProgress size={20} /> : "Submit"}
               </Button>
             </Form>
-            {!!data && (
-              <ViewAppOutputs app={app} data={data} innerRef={appOutputsRef} />
-            )}
+            <ViewAppOutputs app={app} data={data} innerRef={appOutputsRef} />
           </>
         )}
       </Formik>
