@@ -1,9 +1,9 @@
 import { styled, TextField, TextFieldProps } from "@mui/material";
+import DOMPurify from "isomorphic-dompurify";
 import katex from "katex";
+import { get, pick } from "lodash";
 import React from "react";
 import { commonProps, DefaultProps, INPUT_PROPS } from "./constants";
-import DOMPurify from "isomorphic-dompurify";
-import { get, pick } from "lodash";
 
 const Root = styled("div")(({ theme }) => ({
   display: "flex",

@@ -1,14 +1,10 @@
 {
-	"app_id": "0325014",
-	"name": "All Inputs",
-	"description": "All input components available on MecSimCalc",
+	"name": "Hello World",
+	"description": "Welcome to MecSimCalc self hosting",
 	"author": {
-		"id": "5e00ae82-a376-489d-8a4f-3676a3402233",
-		"username": "admin",
-		"image": "https://api.mecsimcalc.com//media/users/5e00ae82-a376-489d-8a4f-3676a3402233.png"
+		"username": "You",
+		"image": "https://source.unsplash.com/random?profile"
 	},
-	"status": "draft",
-	"permission": "public",
 	"category": {
 		"id": 1,
 		"name": "Tutorial",
@@ -16,19 +12,14 @@
 	},
 	"tags": [
 		{
-			"id": 30,
-			"name": "Featured"
-		},
-		{
 			"id": 1,
 			"name": "Tutorial"
 		}
 	],
 	"created_on": "2022-02-07T23:42:50.310189-07:00",
 	"updated_at": "2022-03-03T21:26:27.950425-07:00",
-	"primary_image": "https://api.mecsimcalc.com//media/apps/default/primary_image_4.jpg",
-	"favicon_image": "https://api.mecsimcalc.com//media/apps/default/favicon.png",
-	"secondary_images": [],
+	"primary_image": "https://source.unsplash.com/random?wallpaper",
+	"favicon_image": "https://source.unsplash.com/random?logo",
 	"input_sections": {
 		"order": [
 			"section-0",
@@ -670,14 +661,6 @@
 		]
 	},
 	"code": "def main(inputs):\r\n    return inputs",
-	"theme": "light",
 	"output_html": "<h2>Outputs</h2><p><br></p><p>&lt;table&gt;</p><p><strong style=\"color: black;\">{% for key, value in outputs %}</strong></p><p><span style=\"color: black;\">&lt;tr&gt;</span></p><p><span style=\"color: black;\">&lt;td&gt;</span><strong><u>{{ key }}</u></strong><span style=\"color: black;\">&lt;/td&gt;</span></p><p><span style=\"color: black;\">&lt;td&gt;</span>{{ value }}<span style=\"color: black;\">&lt;/td&gt;</span></p><p><span style=\"color: black;\">&lt;/tr&gt;</span></p><p><strong style=\"color: black;\">{% endfor %}</strong></p><p>&lt;/table&gt;</p>",
 	"docs_html": "<h3>Code</h3><pre class=\"ql-syntax\" spellcheck=\"false\"><span class=\"hljs-keyword\">def</span>&nbsp;<span class=\"hljs-title function_\">main</span>(<span class=\"hljs-params\">inputs</span>):\r\n&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"hljs-keyword\">return</span>&nbsp;inputs\r\n</pre><p><br></p><h3>Outputs</h3><pre class=\"ql-syntax\" spellcheck=\"false\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">table</span>&gt;</span>\r\n{% <span class=\"hljs-name\"><span class=\"hljs-name\">for</span></span> key, value <span class=\"hljs-keyword\">in</span> outputs %}\r\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">tr</span>&gt;</span>\r\n      <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">td</span>&gt;</span>{{ key }}<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">td</span>&gt;</span>\r\n      <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">td</span>&gt;</span>{{ value }}<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">td</span>&gt;</span>\r\n  <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">tr</span>&gt;</span>\r\n{% <span class=\"hljs-name\"><span class=\"hljs-name\">endfor</span></span> %}\r\n<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">table</span>&gt;</span>\r\n</pre>",
-	"related_app": {
-		"views": 19,
-		"code": "def main(inputs):\r\n    return inputs",
-		"stars": 0
-	},
-	"views": 0,
-	"stars": 0
 }

@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Box } from "@mui/material";
+import { AppBar, Box, Toolbar } from "@mui/material";
 import { NAV_ITEMS } from "./constants";
 import { LogoButton } from "./LogoButton";
 import NavbarMenu from "./NavbarMenu";

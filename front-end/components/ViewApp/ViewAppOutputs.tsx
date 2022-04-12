@@ -1,10 +1,10 @@
 import { Alert, AlertTitle, Card, CardContent, Divider } from "@mui/material";
-import React from "react";
-import { App } from "../types";
 import DOMPurify from "isomorphic-dompurify";
 import katex from "katex";
 import { parse } from "node-html-parser";
 import nunjucks from "nunjucks";
+import React from "react";
+import { App } from "../types";
 
 interface Props {
   app: App;

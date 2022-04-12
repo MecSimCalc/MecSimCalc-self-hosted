@@ -1,6 +1,5 @@
 import React from "react";
 import { commonProps, DefaultProps } from "./constants";
-
 import Slider from "./Slider";
 
 interface Props {

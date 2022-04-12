@@ -9,8 +9,8 @@ import {
   Chip,
   Skeleton,
   Stack,
-  Typography,
   styled,
+  Typography,
 } from "@mui/material";
 import { get } from "lodash";
 import Link from "next/link";

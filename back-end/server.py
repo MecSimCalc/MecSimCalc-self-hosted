@@ -1,12 +1,13 @@
-from contextlib import redirect_stdout
 import importlib
+import io
+import json
+import os
 import tempfile
-from flask import Flask, jsonify, request
-import os, json, io
 import traceback
+from contextlib import redirect_stdout
 
+from flask import Flask, jsonify, request
 from flask_cors import CORS
-
 
 server = Flask(__name__)
 CORS(server)
@@ -33,6 +34,7 @@ def apps():
     return jsonify(response), 200
 
 
+# Run the python code and return its outputs and stdout
 def run_code(code):
     response = {}
     # (1) Get user inputs as json
@@ -86,6 +88,8 @@ def app(app_id):
     except FileNotFoundError as e:
         print(e)
         return f'"{app_id}" does not exist', 404
+    except json.JSONDecodeError as e:
+        return f'"{app_id}.json" is not in a valid JSON format. Please fix this file', 500
 
     if request.method == "GET":
         response = {
@@ -114,4 +118,6 @@ def app(app_id):
 
 
 if __name__ == "__main__":
+    # Start Flask server
+    # Set DEBUG to False in production!
     server.run(debug=True)
