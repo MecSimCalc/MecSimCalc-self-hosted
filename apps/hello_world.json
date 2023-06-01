@@ -1,666 +1,642 @@
 {
-	"name": "Hello World",
-	"description": "Welcome to MecSimCalc self hosting",
-	"author": {
-		"username": "You",
-		"image": "https://source.unsplash.com/random?profile"
-	},
-	"category": {
-		"id": 1,
-		"name": "Tutorial",
-		"description": "Apps for learning or teaching MecSimCalc"
-	},
-	"tags": [
-		{
-			"id": 1,
-			"name": "Tutorial"
-		}
-	],
-	"created_on": "2022-02-07T23:42:50.310189-07:00",
-	"updated_at": "2022-03-03T21:26:27.950425-07:00",
-	"primary_image": "https://source.unsplash.com/random?wallpaper",
-	"favicon_image": "https://source.unsplash.com/random?logo",
-	"input_sections": {
-		"order": [
-			"section-0",
-			"section-1",
-			"section-2"
-		],
-		"section-0": {
-			"id": "section-0",
-			"title": "User Inputs",
-			"inputs_order": [
-				"input_0",
-				"input_1",
-				"input_2",
-				"input_3",
-				"input_4",
-				"input_5",
-				"input_6",
-				"input_7",
-				"input_8",
-				"input_9",
-				"input_26"
-			]
-		},
-		"section-1": {
-			"id": "section-1",
-			"title": "Visual Inputs",
-			"inputs_order": [
-				"input_10"
-			]
-		},
-		"section-2": {
-			"id": "section-2",
-			"title": "Table Group",
-			"inputs_order": [
-				"input_11",
-				"input_12",
-				"input_13",
-				"input_14",
-				"input_15",
-				"input_16",
-				"input_17",
-				"input_18",
-				"input_19",
-				"input_20",
-				"input_21",
-				"input_22",
-				"input_23",
-				"input_24",
-				"input_25"
-			],
-			"type": "table",
-			"name": "table_group",
-			"cols": 4
-		}
-	},
-	"input_inputs": {
-		"input_0": {
-			"id": "input_0",
-			"component": "NumberInput",
-			"props": {
-				"name": "number_input",
-				"label": " Number Input",
-				"units": "cm^2",
-				"defaultValue": 10,
-				"required": true,
-				"disabled": false,
-				"step": 0.001,
-				"min": -10000,
-				"max": 10000
-			}
-		},
-		"input_1": {
-			"id": "input_1",
-			"component": "TextInput",
-			"props": {
-				"name": "text_input",
-				"label": " Text Input",
-				"defaultValue": " Text Input",
-				"placeholder": " Text Input",
-				"required": true,
-				"disabled": false,
-				"minLength": 0,
-				"maxLength": 10000,
-				"pattern": ".*"
-			}
-		},
-		"input_2": {
-			"id": "input_2",
-			"component": "FileInput",
-			"props": {
-				"name": "file_input",
-				"label": " File Input",
-				"accept": "",
-				"required": false,
-				"multiple": false,
-				"disabled": false
-			}
-		},
-		"input_3": {
-			"id": "input_3",
-			"component": "SingleSelect",
-			"props": {
-				"name": "single_select_buttons",
-				"label": " Single Select Buttons",
-				"options": [
-					"Option 0",
-					"Option 1",
-					"Option 2"
-				],
-				"disabled": false
-			}
-		},
-		"input_4": {
-			"id": "input_4",
-			"component": "MultipleSelect",
-			"props": {
-				"name": "multiple_select",
-				"label": " Multiple Select",
-				"options": [
-					"Option 0",
-					"Option 1",
-					"Option 2"
-				],
-				"required": false,
-				"disabled": false,
-				"chip": true
-			}
-		},
-		"input_5": {
-			"id": "input_5",
-			"component": "Checkbox",
-			"props": {
-				"name": "checkbox",
-				"label": " Checkbox",
-				"disabled": false,
-				"defaultChecked": true
-			}
-		},
-		"input_6": {
-			"id": "input_6",
-			"component": "Slider",
-			"props": {
-				"name": "slider",
-				"label": " Slider",
-				"defaultValue": 0,
-				"min": -10,
-				"max": 10,
-				"step": 1,
-				"disabled": false,
-				"marks": false
-			}
-		},
-		"input_7": {
-			"id": "input_7",
-			"component": "RangeSlider",
-			"props": {
-				"name": "range_slider",
-				"label": " Range Slider",
-				"defaultMinValue": -5,
-				"defaultMaxValue": 5,
-				"min": -10,
-				"max": 10,
-				"step": 1,
-				"disabled": false,
-				"marks": false
-			}
-		},
-		"input_8": {
-			"id": "input_8",
-			"component": "ColorPicker",
-			"props": {
-				"name": "color_picker",
-				"label": " Color Picker",
-				"defaultValue": "#43BFF5",
-				"disabled": false
-			}
-		},
-		"input_9": {
-			"id": "input_9",
-			"component": "DateTimePicker",
-			"props": {
-				"name": "date_time_picker",
-				"label": " Date Time Picker",
-				"type": [
-					"DateTime",
-					"Date",
-					"Time"
-				],
-				"disabled": false
-			}
-		},
-		"input_10": {
-			"id": "input_10",
-			"component": "RichText",
-			"props": {
-				"richText": "<h2>Rich Text</h2><pre class=\"ql-syntax\" spellcheck=\"false\"><span class=\"hljs-comment\"># This is a code block</span>\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>():\n</pre><p><br></p><p>This is a math equation</p><p><span class=\"ql-formula\" data-value=\"e=m^3\">﻿<span contenteditable=\"false\"><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi><mo>=</mo><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding=\"application/x-tex\">e=m^3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height: 0.43056em; vertical-align: 0em;\"></span><span class=\"mord mathnormal\">e</span><span class=\"mspace\" style=\"margin-right: 0.277778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right: 0.277778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height: 0.814108em; vertical-align: 0em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">m</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height: 0.814108em;\"><span class=\"\" style=\"top: -3.063em; margin-right: 0.05em;\"><span class=\"pstrut\" style=\"height: 2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span></span></span></span></span></span></span></span></span>﻿</span> </p><p><br></p><blockquote>This is a block quote</blockquote><p><br></p><p>This is a picture of a cute puppy</p><p><img src=\"https://hips.hearstapps.com/countryliving.cdnds.net/17/47/1511194376-cavachon-puppy-christmas.jpg\" alt=\"Buying a puppy - 6 things to know before buying a puppy this Christmas\" style=\"\" width=\"125\"></p><p><br></p><p><a href=\"https://mecsimcalc.com/\" rel=\"noopener noreferrer\" target=\"_blank\">This is a hyperlink</a></p><p><br></p><p><strong>This<s> </s></strong><s>is a</s> <em>styled </em><u>sentence</u></p><p><br></p><ol><li>This is a list</li></ol>"
-			}
-		},
-		"section-2": {
-			"id": "section-2",
-			"component": "TableGroup",
-			"props": {
-				"name": "table_group"
-			}
-		},
-		"input_11": {
-			"id": "input_11",
-			"component": "RichText",
-			"props": {
-				"richText": "<p><strong>Column 1</strong></p>"
-			}
-		},
-		"input_12": {
-			"id": "input_12",
-			"component": "RichText",
-			"props": {
-				"richText": "<p><strong>Column 2</strong></p>"
-			}
-		},
-		"input_13": {
-			"id": "input_13",
-			"component": "RichText",
-			"props": {
-				"richText": "<p><strong>Column 3</strong></p>"
-			}
-		},
-		"input_14": {
-			"id": "input_14",
-			"component": "RichText",
-			"props": {
-				"richText": "<p><strong>Row 1</strong></p>"
-			}
-		},
-		"input_15": {
-			"id": "input_15",
-			"component": "RichText",
-			"props": {
-				"richText": "<p><strong>Row 2</strong></p>"
-			}
-		},
-		"input_16": {
-			"id": "input_16",
-			"component": "RichText",
-			"props": {
-				"richText": "<p><strong>Row 3</strong></p>"
-			}
-		},
-		"input_17": {
-			"id": "input_17",
-			"component": "NumberInput",
-			"props": {
-				"name": "input_17",
-				"label": "Row 1 Col 1",
-				"units": "",
-				"defaultValue": 1,
-				"required": true,
-				"disabled": false,
-				"step": 0.001,
-				"min": -10000,
-				"max": 10000
-			}
-		},
-		"input_18": {
-			"id": "input_18",
-			"component": "NumberInput",
-			"props": {
-				"name": "input_18",
-				"label": "Row 2 Col 1",
-				"units": "",
-				"defaultValue": 2,
-				"required": true,
-				"disabled": false,
-				"step": 0.001,
-				"min": -10000,
-				"max": 10000
-			}
-		},
-		"input_19": {
-			"id": "input_19",
-			"component": "NumberInput",
-			"props": {
-				"name": "input_19",
-				"label": "Row 3 Col 1",
-				"units": "",
-				"defaultValue": 3,
-				"required": true,
-				"disabled": true,
-				"step": 0.001,
-				"min": -10000,
-				"max": 10000
-			}
-		},
-		"input_20": {
-			"id": "input_20",
-			"component": "TextInput",
-			"props": {
-				"name": "input_20",
-				"label": "Row 1 Col 2",
-				"defaultValue": "a",
-				"placeholder": "",
-				"required": true,
-				"disabled": false,
-				"minLength": 0,
-				"maxLength": 10000,
-				"pattern": ".*"
-			}
-		},
-		"input_21": {
-			"id": "input_21",
-			"component": "TextInput",
-			"props": {
-				"name": "input_21",
-				"label": "Row 2 Col 2",
-				"defaultValue": "a",
-				"placeholder": "",
-				"required": true,
-				"disabled": false,
-				"minLength": 0,
-				"maxLength": 10000,
-				"pattern": ".*"
-			}
-		},
-		"input_22": {
-			"id": "input_22",
-			"component": "TextInput",
-			"props": {
-				"name": "input_22",
-				"label": "Row 3 Col 2",
-				"defaultValue": "a",
-				"placeholder": "",
-				"required": true,
-				"disabled": true,
-				"minLength": 0,
-				"maxLength": 10000,
-				"pattern": ".*"
-			}
-		},
-		"input_23": {
-			"id": "input_23",
-			"component": "Checkbox",
-			"props": {
-				"name": "input_23",
-				"label": "Row 1 Col 3",
-				"disabled": false,
-				"defaultChecked": true
-			}
-		},
-		"input_24": {
-			"id": "input_24",
-			"component": "Checkbox",
-			"props": {
-				"name": "input_24",
-				"label": "Row 2 Col 3",
-				"disabled": false,
-				"defaultChecked": false
-			}
-		},
-		"input_25": {
-			"id": "input_25",
-			"component": "Checkbox",
-			"props": {
-				"name": "input_25",
-				"label": "Row 3 Col 3",
-				"disabled": true,
-				"defaultChecked": true
-			}
-		},
-		"input_26": {
-			"id": "input_26",
-			"component": "SingleSelect",
-			"props": {
-				"name": "single_select_menu",
-				"label": " Single Select Menu",
-				"options": [
-					"Option 0",
-					"Option 1",
-					"Option 2",
-					"Option 3",
-					"Option 4"
-				],
-				"disabled": false
-			}
-		}
-	},
-	"input_layout": {
-		"section-0": [
-			{
-				"w": 10,
-				"h": 1,
-				"x": 0,
-				"y": 0,
-				"i": "input_0",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 10,
-				"h": 1,
-				"x": 0,
-				"y": 1,
-				"i": "input_1",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 10,
-				"h": 1,
-				"x": 0,
-				"y": 2,
-				"i": "input_2",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 10,
-				"h": 1,
-				"x": 0,
-				"y": 3,
-				"i": "input_3",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 10,
-				"h": 1,
-				"x": 0,
-				"y": 5,
-				"i": "input_4",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 10,
-				"h": 1,
-				"x": 0,
-				"y": 6,
-				"i": "input_5",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 10,
-				"h": 1,
-				"x": 0,
-				"y": 7,
-				"i": "input_6",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 10,
-				"h": 1,
-				"x": 0,
-				"y": 8,
-				"i": "input_7",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 10,
-				"h": 1,
-				"x": 0,
-				"y": 9,
-				"i": "input_8",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 10,
-				"h": 1,
-				"x": 0,
-				"y": 10,
-				"i": "input_9",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 10,
-				"h": 1,
-				"x": 0,
-				"y": 4,
-				"i": "input_26",
-				"moved": false,
-				"static": false
-			}
-		],
-		"section-1": [
-			{
-				"w": 10,
-				"h": 8,
-				"x": 0,
-				"y": 0,
-				"i": "input_10",
-				"moved": false,
-				"static": false
-			}
-		],
-		"section-2": [
-			{
-				"w": 1,
-				"h": 1,
-				"x": 1,
-				"y": 0,
-				"i": "input_11",
-				"moved": false,
-				"static": false,
-				"isDraggable": true
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 2,
-				"y": 0,
-				"i": "input_12",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 3,
-				"y": 0,
-				"i": "input_13",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 0,
-				"y": 1,
-				"i": "input_14",
-				"moved": false,
-				"static": false,
-				"isDraggable": true
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 0,
-				"y": 2,
-				"i": "input_15",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 0,
-				"y": 3,
-				"i": "input_16",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 1,
-				"y": 1,
-				"i": "input_17",
-				"moved": false,
-				"static": false,
-				"isDraggable": true
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 1,
-				"y": 2,
-				"i": "input_18",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 1,
-				"y": 3,
-				"i": "input_19",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 2,
-				"y": 1,
-				"i": "input_20",
-				"moved": false,
-				"static": false,
-				"isDraggable": true
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 2,
-				"y": 2,
-				"i": "input_21",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 2,
-				"y": 3,
-				"i": "input_22",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 3,
-				"y": 1,
-				"i": "input_23",
-				"moved": false,
-				"static": false,
-				"isDraggable": true
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 3,
-				"y": 2,
-				"i": "input_24",
-				"moved": false,
-				"static": false
-			},
-			{
-				"w": 1,
-				"h": 1,
-				"x": 3,
-				"y": 3,
-				"i": "input_25",
-				"moved": false,
-				"static": false
-			}
-		]
-	},
-	"code": "def main(inputs):\r\n    return inputs",
-	"output_html": "<h2>Outputs</h2><p><br></p><p>&lt;table&gt;</p><p><strong style=\"color: black;\">{% for key, value in outputs %}</strong></p><p><span style=\"color: black;\">&lt;tr&gt;</span></p><p><span style=\"color: black;\">&lt;td&gt;</span><strong><u>{{ key }}</u></strong><span style=\"color: black;\">&lt;/td&gt;</span></p><p><span style=\"color: black;\">&lt;td&gt;</span>{{ value }}<span style=\"color: black;\">&lt;/td&gt;</span></p><p><span style=\"color: black;\">&lt;/tr&gt;</span></p><p><strong style=\"color: black;\">{% endfor %}</strong></p><p>&lt;/table&gt;</p>",
-	"docs_html": "<h3>Code</h3><pre class=\"ql-syntax\" spellcheck=\"false\"><span class=\"hljs-keyword\">def</span>&nbsp;<span class=\"hljs-title function_\">main</span>(<span class=\"hljs-params\">inputs</span>):\r\n&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"hljs-keyword\">return</span>&nbsp;inputs\r\n</pre><p><br></p><h3>Outputs</h3><pre class=\"ql-syntax\" spellcheck=\"false\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">table</span>&gt;</span>\r\n{% <span class=\"hljs-name\"><span class=\"hljs-name\">for</span></span> key, value <span class=\"hljs-keyword\">in</span> outputs %}\r\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">tr</span>&gt;</span>\r\n      <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">td</span>&gt;</span>{{ key }}<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">td</span>&gt;</span>\r\n      <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">td</span>&gt;</span>{{ value }}<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">td</span>&gt;</span>\r\n  <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">tr</span>&gt;</span>\r\n{% <span class=\"hljs-name\"><span class=\"hljs-name\">endfor</span></span> %}\r\n<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">table</span>&gt;</span>\r\n</pre>",
+  "name": "Hello World",
+  "description": "Welcome to MecSimCalc self hosting",
+  "author": {
+    "username": "You",
+    "image": "https://source.unsplash.com/random?profile"
+  },
+  "category": {
+    "id": 1,
+    "name": "Tutorial",
+    "description": "Apps for learning or teaching MecSimCalc"
+  },
+  "tags": [
+    {
+      "id": 1,
+      "name": "Tutorial"
+    }
+  ],
+  "created_on": "2022-02-07T23:42:50.310189-07:00",
+  "updated_at": "2022-03-03T21:26:27.950425-07:00",
+  "primary_image": "https://source.unsplash.com/random?wallpaper",
+  "favicon_image": "https://source.unsplash.com/random?logo",
+  "input_sections": {
+    "order": ["section-0", "section-1", "section-2"],
+    "section-0": {
+      "id": "section-0",
+      "title": "User Inputs",
+      "inputs_order": [
+        "input_0",
+        "input_1",
+        "input_2",
+        "input_3",
+        "input_4",
+        "input_5",
+        "input_6",
+        "input_7",
+        "input_8",
+        "input_9",
+        "input_26"
+      ]
+    },
+    "section-1": {
+      "id": "section-1",
+      "title": "Visual Inputs",
+      "inputs_order": ["input_10"]
+    },
+    "section-2": {
+      "id": "section-2",
+      "title": "Table Group",
+      "inputs_order": [
+        "input_11",
+        "input_12",
+        "input_13",
+        "input_14",
+        "input_15",
+        "input_16",
+        "input_17",
+        "input_18",
+        "input_19",
+        "input_20",
+        "input_21",
+        "input_22",
+        "input_23",
+        "input_24",
+        "input_25"
+      ],
+      "type": "table",
+      "name": "table_group",
+      "cols": 4
+    }
+  },
+  "input_inputs": {
+    "input_0": {
+      "id": "input_0",
+      "component": "NumberInput",
+      "props": {
+        "name": "number_input",
+        "label": " Number Input",
+        "units": "cm^2",
+        "defaultValue": 10,
+        "required": true,
+        "disabled": false,
+        "step": 0.001,
+        "min": -10000,
+        "max": 10000
+      }
+    },
+    "input_1": {
+      "id": "input_1",
+      "component": "TextInput",
+      "props": {
+        "name": "text_input",
+        "label": " Text Input",
+        "defaultValue": " Text Input",
+        "placeholder": " Text Input",
+        "required": true,
+        "disabled": false,
+        "minLength": 0,
+        "maxLength": 10000,
+        "pattern": ".*"
+      }
+    },
+    "input_2": {
+      "id": "input_2",
+      "component": "FileInput",
+      "props": {
+        "name": "file_input",
+        "label": " File Input",
+        "accept": "",
+        "required": false,
+        "multiple": false,
+        "disabled": false
+      }
+    },
+    "input_3": {
+      "id": "input_3",
+      "component": "SingleSelect",
+      "props": {
+        "name": "single_select_buttons",
+        "label": " Single Select Buttons",
+        "options": ["Option 0", "Option 1", "Option 2"],
+        "disabled": false
+      }
+    },
+    "input_4": {
+      "id": "input_4",
+      "component": "MultipleSelect",
+      "props": {
+        "name": "multiple_select",
+        "label": " Multiple Select",
+        "options": ["Option 0", "Option 1", "Option 2"],
+        "required": false,
+        "disabled": false,
+        "chip": true
+      }
+    },
+    "input_5": {
+      "id": "input_5",
+      "component": "Checkbox",
+      "props": {
+        "name": "checkbox",
+        "label": " Checkbox",
+        "disabled": false,
+        "defaultChecked": true
+      }
+    },
+    "input_6": {
+      "id": "input_6",
+      "component": "Slider",
+      "props": {
+        "name": "slider",
+        "label": " Slider",
+        "defaultValue": 0,
+        "min": -10,
+        "max": 10,
+        "step": 1,
+        "disabled": false,
+        "marks": false
+      }
+    },
+    "input_7": {
+      "id": "input_7",
+      "component": "RangeSlider",
+      "props": {
+        "name": "range_slider",
+        "label": " Range Slider",
+        "defaultMinValue": -5,
+        "defaultMaxValue": 5,
+        "min": -10,
+        "max": 10,
+        "step": 1,
+        "disabled": false,
+        "marks": false
+      }
+    },
+    "input_8": {
+      "id": "input_8",
+      "component": "ColorPicker",
+      "props": {
+        "name": "color_picker",
+        "label": " Color Picker",
+        "defaultValue": "#43BFF5",
+        "disabled": false
+      }
+    },
+    "input_9": {
+      "id": "input_9",
+      "component": "DateTimePicker",
+      "props": {
+        "name": "date_time_picker",
+        "label": " Date Time Picker",
+        "type": ["DateTime", "Date", "Time"],
+        "disabled": false
+      }
+    },
+    "input_10": {
+      "id": "input_10",
+      "component": "RichText",
+      "props": {
+        "richText": "<h2>Rich Text</h2><pre class=\"ql-syntax\" spellcheck=\"false\"><span class=\"hljs-comment\"># This is a code block</span>\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">main</span>():\n</pre><p><br></p><p>This is a math equation</p><p><span class=\"ql-formula\" data-value=\"e=m^3\">﻿<span contenteditable=\"false\"><span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi><mo>=</mo><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding=\"application/x-tex\">e=m^3</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height: 0.43056em; vertical-align: 0em;\"></span><span class=\"mord mathnormal\">e</span><span class=\"mspace\" style=\"margin-right: 0.277778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right: 0.277778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height: 0.814108em; vertical-align: 0em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">m</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height: 0.814108em;\"><span class=\"\" style=\"top: -3.063em; margin-right: 0.05em;\"><span class=\"pstrut\" style=\"height: 2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">3</span></span></span></span></span></span></span></span></span></span></span></span>﻿</span> </p><p><br></p><blockquote>This is a block quote</blockquote><p><br></p><p>This is a picture of a cute puppy</p><p><img src=\"https://hips.hearstapps.com/countryliving.cdnds.net/17/47/1511194376-cavachon-puppy-christmas.jpg\" alt=\"Buying a puppy - 6 things to know before buying a puppy this Christmas\" style=\"\" width=\"125\"></p><p><br></p><p><a href=\"https://mecsimcalc.com/\" rel=\"noopener noreferrer\" target=\"_blank\">This is a hyperlink</a></p><p><br></p><p><strong>This<s> </s></strong><s>is a</s> <em>styled </em><u>sentence</u></p><p><br></p><ol><li>This is a list</li></ol>"
+      }
+    },
+    "section-2": {
+      "id": "section-2",
+      "component": "TableGroup",
+      "props": {
+        "name": "table_group"
+      }
+    },
+    "input_11": {
+      "id": "input_11",
+      "component": "RichText",
+      "props": {
+        "richText": "<p><strong>Column 1</strong></p>"
+      }
+    },
+    "input_12": {
+      "id": "input_12",
+      "component": "RichText",
+      "props": {
+        "richText": "<p><strong>Column 2</strong></p>"
+      }
+    },
+    "input_13": {
+      "id": "input_13",
+      "component": "RichText",
+      "props": {
+        "richText": "<p><strong>Column 3</strong></p>"
+      }
+    },
+    "input_14": {
+      "id": "input_14",
+      "component": "RichText",
+      "props": {
+        "richText": "<p><strong>Row 1</strong></p>"
+      }
+    },
+    "input_15": {
+      "id": "input_15",
+      "component": "RichText",
+      "props": {
+        "richText": "<p><strong>Row 2</strong></p>"
+      }
+    },
+    "input_16": {
+      "id": "input_16",
+      "component": "RichText",
+      "props": {
+        "richText": "<p><strong>Row 3</strong></p>"
+      }
+    },
+    "input_17": {
+      "id": "input_17",
+      "component": "NumberInput",
+      "props": {
+        "name": "input_17",
+        "label": "Row 1 Col 1",
+        "units": "",
+        "defaultValue": 1,
+        "required": true,
+        "disabled": false,
+        "step": 0.001,
+        "min": -10000,
+        "max": 10000
+      }
+    },
+    "input_18": {
+      "id": "input_18",
+      "component": "NumberInput",
+      "props": {
+        "name": "input_18",
+        "label": "Row 2 Col 1",
+        "units": "",
+        "defaultValue": 2,
+        "required": true,
+        "disabled": false,
+        "step": 0.001,
+        "min": -10000,
+        "max": 10000
+      }
+    },
+    "input_19": {
+      "id": "input_19",
+      "component": "NumberInput",
+      "props": {
+        "name": "input_19",
+        "label": "Row 3 Col 1",
+        "units": "",
+        "defaultValue": 3,
+        "required": true,
+        "disabled": true,
+        "step": 0.001,
+        "min": -10000,
+        "max": 10000
+      }
+    },
+    "input_20": {
+      "id": "input_20",
+      "component": "TextInput",
+      "props": {
+        "name": "input_20",
+        "label": "Row 1 Col 2",
+        "defaultValue": "a",
+        "placeholder": "",
+        "required": true,
+        "disabled": false,
+        "minLength": 0,
+        "maxLength": 10000,
+        "pattern": ".*"
+      }
+    },
+    "input_21": {
+      "id": "input_21",
+      "component": "TextInput",
+      "props": {
+        "name": "input_21",
+        "label": "Row 2 Col 2",
+        "defaultValue": "a",
+        "placeholder": "",
+        "required": true,
+        "disabled": false,
+        "minLength": 0,
+        "maxLength": 10000,
+        "pattern": ".*"
+      }
+    },
+    "input_22": {
+      "id": "input_22",
+      "component": "TextInput",
+      "props": {
+        "name": "input_22",
+        "label": "Row 3 Col 2",
+        "defaultValue": "a",
+        "placeholder": "",
+        "required": true,
+        "disabled": true,
+        "minLength": 0,
+        "maxLength": 10000,
+        "pattern": ".*"
+      }
+    },
+    "input_23": {
+      "id": "input_23",
+      "component": "Checkbox",
+      "props": {
+        "name": "input_23",
+        "label": "Row 1 Col 3",
+        "disabled": false,
+        "defaultChecked": true
+      }
+    },
+    "input_24": {
+      "id": "input_24",
+      "component": "Checkbox",
+      "props": {
+        "name": "input_24",
+        "label": "Row 2 Col 3",
+        "disabled": false,
+        "defaultChecked": false
+      }
+    },
+    "input_25": {
+      "id": "input_25",
+      "component": "Checkbox",
+      "props": {
+        "name": "input_25",
+        "label": "Row 3 Col 3",
+        "disabled": true,
+        "defaultChecked": true
+      }
+    },
+    "input_26": {
+      "id": "input_26",
+      "component": "SingleSelect",
+      "props": {
+        "name": "single_select_menu",
+        "label": " Single Select Menu",
+        "options": ["Option 0", "Option 1", "Option 2", "Option 3", "Option 4"],
+        "disabled": false
+      }
+    }
+  },
+  "input_layout": {
+    "section-0": [
+      {
+        "w": 10,
+        "h": 1,
+        "x": 0,
+        "y": 0,
+        "i": "input_0",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 10,
+        "h": 1,
+        "x": 0,
+        "y": 1,
+        "i": "input_1",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 10,
+        "h": 1,
+        "x": 0,
+        "y": 2,
+        "i": "input_2",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 10,
+        "h": 1,
+        "x": 0,
+        "y": 3,
+        "i": "input_3",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 10,
+        "h": 1,
+        "x": 0,
+        "y": 5,
+        "i": "input_4",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 10,
+        "h": 1,
+        "x": 0,
+        "y": 6,
+        "i": "input_5",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 10,
+        "h": 1,
+        "x": 0,
+        "y": 7,
+        "i": "input_6",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 10,
+        "h": 1,
+        "x": 0,
+        "y": 8,
+        "i": "input_7",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 10,
+        "h": 1,
+        "x": 0,
+        "y": 9,
+        "i": "input_8",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 10,
+        "h": 1,
+        "x": 0,
+        "y": 10,
+        "i": "input_9",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 10,
+        "h": 1,
+        "x": 0,
+        "y": 4,
+        "i": "input_26",
+        "moved": false,
+        "static": false
+      }
+    ],
+    "section-1": [
+      {
+        "w": 10,
+        "h": 8,
+        "x": 0,
+        "y": 0,
+        "i": "input_10",
+        "moved": false,
+        "static": false
+      }
+    ],
+    "section-2": [
+      {
+        "w": 1,
+        "h": 1,
+        "x": 1,
+        "y": 0,
+        "i": "input_11",
+        "moved": false,
+        "static": false,
+        "isDraggable": true
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 2,
+        "y": 0,
+        "i": "input_12",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 3,
+        "y": 0,
+        "i": "input_13",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 0,
+        "y": 1,
+        "i": "input_14",
+        "moved": false,
+        "static": false,
+        "isDraggable": true
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 0,
+        "y": 2,
+        "i": "input_15",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 0,
+        "y": 3,
+        "i": "input_16",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 1,
+        "y": 1,
+        "i": "input_17",
+        "moved": false,
+        "static": false,
+        "isDraggable": true
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 1,
+        "y": 2,
+        "i": "input_18",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 1,
+        "y": 3,
+        "i": "input_19",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 2,
+        "y": 1,
+        "i": "input_20",
+        "moved": false,
+        "static": false,
+        "isDraggable": true
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 2,
+        "y": 2,
+        "i": "input_21",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 2,
+        "y": 3,
+        "i": "input_22",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 3,
+        "y": 1,
+        "i": "input_23",
+        "moved": false,
+        "static": false,
+        "isDraggable": true
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 3,
+        "y": 2,
+        "i": "input_24",
+        "moved": false,
+        "static": false
+      },
+      {
+        "w": 1,
+        "h": 1,
+        "x": 3,
+        "y": 3,
+        "i": "input_25",
+        "moved": false,
+        "static": false
+      }
+    ]
+  },
+  "code": "def main(inputs):\r\n    return inputs",
+  "output_html": "<h2>Outputs</h2><p><br></p><p>&lt;table&gt;</p><p><strong style=\"color: black;\">{% for key, value in outputs %}</strong></p><p><span style=\"color: black;\">&lt;tr&gt;</span></p><p><span style=\"color: black;\">&lt;td&gt;</span><strong><u>{{ key }}</u></strong><span style=\"color: black;\">&lt;/td&gt;</span></p><p><span style=\"color: black;\">&lt;td&gt;</span>{{ value }}<span style=\"color: black;\">&lt;/td&gt;</span></p><p><span style=\"color: black;\">&lt;/tr&gt;</span></p><p><strong style=\"color: black;\">{% endfor %}</strong></p><p>&lt;/table&gt;</p>",
+  "docs_html": "<h3>Code</h3><pre class=\"ql-syntax\" spellcheck=\"false\"><span class=\"hljs-keyword\">def</span>&nbsp;<span class=\"hljs-title function_\">main</span>(<span class=\"hljs-params\">inputs</span>):\r\n&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"hljs-keyword\">return</span>&nbsp;inputs\r\n</pre><p><br></p><h3>Outputs</h3><pre class=\"ql-syntax\" spellcheck=\"false\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">table</span>&gt;</span>\r\n{% <span class=\"hljs-name\"><span class=\"hljs-name\">for</span></span> key, value <span class=\"hljs-keyword\">in</span> outputs %}\r\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">tr</span>&gt;</span>\r\n      <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">td</span>&gt;</span>{{ key }}<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">td</span>&gt;</span>\r\n      <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">td</span>&gt;</span>{{ value }}<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">td</span>&gt;</span>\r\n  <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">tr</span>&gt;</span>\r\n{% <span class=\"hljs-name\"><span class=\"hljs-name\">endfor</span></span> %}\r\n<span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">table</span>&gt;</span>\r\n</pre>"
 }
