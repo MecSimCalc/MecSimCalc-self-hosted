@@ -1,8 +1,6 @@
-import importlib
 import io
 import json
 import os
-import tempfile
 import traceback
 from contextlib import redirect_stdout
 
@@ -57,27 +55,21 @@ def run_code(code):
     response = {}
     # (1) Get user inputs as json
     inputs = request.get_json(force=True)
-    with tempfile.NamedTemporaryFile(mode="w", suffix=".py") as code_file:
-        # (2) Write code to a temp file
-        code_file.write(code)
-        code_file.flush()
-        # (3) Capture stdout
-        stdout = io.StringIO()
-        with redirect_stdout(stdout):
-            # (4) Compile and run the app code
-            try:
-                # https://stackoverflow.com/a/67692
-                # Compile the functions
-                spec = importlib.util.spec_from_file_location(
-                    "app_code", code_file.name
-                )
-                script = importlib.util.module_from_spec(spec)
-                spec.loader.exec_module(script)
-                # Execute the main() function
-                response["outputs"] = clean_json(script.main(inputs))
-            except Exception as e:
-                response["error"] = traceback.format_exc()
-        response["stdout"] = stdout.getvalue()
+    # (3) Capture stdout
+    stdout = io.StringIO()
+    with redirect_stdout(stdout):
+        # (4) Compile and run the app code
+        try:
+            g = {}
+            exec(code, g)
+
+            assert "main" in g, "'def main(inputs):' is not defined"
+            outputs = g["main"](inputs)
+
+            response["outputs"] = clean_json(outputs)
+        except Exception as e:
+            response["error"] = traceback.format_exc()
+    response["stdout"] = stdout.getvalue()
     return response
 
 
