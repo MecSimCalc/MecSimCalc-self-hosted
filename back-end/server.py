@@ -14,19 +14,37 @@ CORS(server)
 
 APPS_PATH = "../apps"
 
+
 # GET: fetch all apps in `apps` folder
 @server.route("/apps", methods=["GET"])
 def apps():
     # Load and return all json files from `apps` folder
-    json_files = sorted([file for file in os.listdir(APPS_PATH) if file.endswith(".json")])
+    json_files = sorted(
+        [file for file in os.listdir(APPS_PATH) if file.endswith(".json")]
+    )
     response = []
     for json_file in json_files:
         try:
             with open(os.path.join(APPS_PATH, json_file), "r") as f:
                 data = json.load(f)
-            metadata = {key: data.get(key) for key in ["name", "description", "author", "category", "tags", "favicon_image", "primary_image"]}
-            metadata = {k: v for k, v in metadata.items() if v is not None}  # Remove None values
-            metadata["app_id"] = os.path.splitext(json_file)[0]  # the filename is the ID with `.json`
+            metadata = {
+                key: data.get(key)
+                for key in [
+                    "name",
+                    "description",
+                    "author",
+                    "category",
+                    "tags",
+                    "favicon_image",
+                    "primary_image",
+                ]
+            }
+            metadata = {
+                k: v for k, v in metadata.items() if v is not None
+            }  # Remove None values
+            metadata["app_id"] = os.path.splitext(json_file)[
+                0
+            ]  # the filename is the ID with `.json`
             response.append(metadata)
         except json.JSONDecodeError as e:
             print(f'"{json_file}" is not in a valid JSON format. Please fix this file')
@@ -50,7 +68,9 @@ def run_code(code):
             try:
                 # https://stackoverflow.com/a/67692
                 # Compile the functions
-                spec = importlib.util.spec_from_file_location("app_code", code_file.name)
+                spec = importlib.util.spec_from_file_location(
+                    "app_code", code_file.name
+                )
                 script = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(script)
                 # Execute the main() function
@@ -89,7 +109,10 @@ def app(app_id):
         print(e)
         return f'"{app_id}" does not exist', 404
     except json.JSONDecodeError as e:
-        return f'"{app_id}.json" is not in a valid JSON format. Please fix this file', 500
+        return (
+            f'"{app_id}.json" is not in a valid JSON format. Please fix this file',
+            500,
+        )
 
     if request.method == "GET":
         response = {
@@ -110,7 +133,9 @@ def app(app_id):
                 "output_html",
             ]
         }
-        response = {k: v for k, v in response.items() if v is not None}  # Remove None values
+        response = {
+            k: v for k, v in response.items() if v is not None
+        }  # Remove None values
         response["app_id"] = app_id
     elif request.method == "POST":
         response = run_code(data.get("code"))
