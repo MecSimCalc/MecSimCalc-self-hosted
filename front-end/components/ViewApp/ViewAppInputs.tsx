@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader } from "@mui/material";
 import { get, omit, sortBy } from "lodash";
 import React, { useMemo } from "react";
 import { Layout, Responsive, WidthProvider } from "react-grid-layout";
-import { App } from "../types";
+import { App, AppSection } from "../types";
 import ViewAppInput from "./ViewAppInput";
 
 interface Props {
@@ -28,7 +28,7 @@ export default function ViewAppInputs({ app }: Props) {
           const { title, inputs_order, cols } = get(
             app,
             `input_sections.${section}`,
-            {}
+            {} as AppSection
           );
           const layout = sortBy(
             // (i) get() layout for this section from `input_layout`
