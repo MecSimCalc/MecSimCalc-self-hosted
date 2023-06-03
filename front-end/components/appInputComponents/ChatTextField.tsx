@@ -59,3 +59,4 @@ const blue = {
 
   return <StyledTextarea aria-label="empty textarea" placeholder="Chat Box"/>;
 }
+

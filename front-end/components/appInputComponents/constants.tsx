@@ -16,6 +16,7 @@ export const COMPONENT_TYPES = [
   "RangeSlider",
   "ColorPicker",
   "DateTimePicker",
+  "ChatTextField",
   // Visual Input
   "RichText",
 ];
