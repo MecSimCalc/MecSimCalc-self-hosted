@@ -4,6 +4,7 @@ import Head from "next/head";
 import { SnackbarProvider } from "notistack";
 import Copyright from "../components/Copyright";
 import Navbar from "../components/Navbar/Navbar";
+import ChatTextField from "../components/appInputComponents/ChatTextField";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -24,6 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <CssBaseline />
       <Navbar />
       <Component {...pageProps} />
+      <ChatTextField />
       <Copyright />
     </SnackbarProvider>
   );
