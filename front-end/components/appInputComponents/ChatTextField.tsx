@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, ChangeEvent } from 'react';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
 
@@ -57,6 +57,11 @@ const blue = {
   `,
   );
 
-  return <StyledTextarea aria-label="empty textarea" placeholder="Chat Box"/>;
+  const [initialValue, setValue] = useState('');
+  function userInput(e: ChangeEvent<HTMLTextAreaElement>) {
+    console.log(e.target.value);
+    setValue(e.target.value);
+  }
+  return <StyledTextarea aria-label="empty textarea" placeholder="Chat Box" onChange={userInput} value={initialValue}/>;
 }
 
