@@ -13,7 +13,7 @@ app.use(cors());
 
 app.listen(PORT, () => console.log(PORT));
 
-app.post("/name", async (req, res) => {
+app.post("/chat_input", async (req, res) => {
   let { initialValue } = req.body;
 
   const configuration = new Configuration({

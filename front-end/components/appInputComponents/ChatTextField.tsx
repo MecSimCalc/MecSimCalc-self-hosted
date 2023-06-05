@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, KeyboardEvent } from 'react';
 import Box from '@mui/joy/Box';
 import Textarea from '@mui/joy/Textarea';
 import Button from '@mui/material/Button';
@@ -17,20 +17,41 @@ export default function ChatTextField(){
     
   const [initialValue, setValue] = useState('');
 
+    //Sending Data to the chatGPT API
+    const sendingData = async() => {
+      try{
+        const res = await axios.post('http://localhost:8080/chat_input', {
+          initialValue
+        });
+        console.log(res.data);
+      }catch(e){
+        console.log(e);
+      }
+      setValue('');
+    }
+
+    //User Input
   const userInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.target.value);
   }
-  const submitChat = async(event: { preventDefault: () => void; }) => {
-    event.preventDefault();
-    try{
-      const res = await axios.post('http://localhost:8080/name', {
-        initialValue
-      });
-      console.log(res.data);
-    }catch(e){
-      console.log(e);
+
+  //Submit Input with 'Enter' key-word
+  function enterSubmit(e: KeyboardEvent){
+    if(document.activeElement === e.target){
+      if(e.key === 'Enter'){
+        e.preventDefault();
+        sendingData();
+      } 
     }
   }
+
+  //Submit Input with 'Send' button
+  const submitChat = (event: { preventDefault: () => void; }) => {
+    event.preventDefault();
+    sendingData();
+  }
+
+  //Render the Chat Box
   return (
     <Box
       sx={{
@@ -43,7 +64,7 @@ export default function ChatTextField(){
     >
     <form  onSubmit={submitChat}>
       <Stack direction="row" spacing={1} sx={submitStyle}>
-      <Textarea name="Outlined" placeholder="Chat Box" variant="outlined" onChange={userInput} value={initialValue} sx={{width: 250}} />
+      <Textarea name="Outlined" placeholder="Chat Box" variant="outlined" onChange={userInput} value={initialValue} sx={{width: 250}} onKeyDown={enterSubmit} />
       <Button variant="contained" type='submit' sx={{height: 43}}>
       <SendIcon fontSize="small" />
       </Button>
