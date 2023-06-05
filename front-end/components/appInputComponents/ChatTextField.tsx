@@ -43,7 +43,7 @@ export default function ChatTextField(){
     >
     <form  onSubmit={submitChat}>
       <Stack direction="row" spacing={1} sx={submitStyle}>
-      <Textarea name="Outlined" placeholder="Chat Box" size="md" variant="outlined" onChange={userInput} value={initialValue} />
+      <Textarea name="Outlined" placeholder="Chat Box" variant="outlined" onChange={userInput} value={initialValue} sx={{width: 250}} />
       <Button variant="contained" type='submit' sx={{height: 43}}>
       <SendIcon fontSize="small" />
       </Button>
