@@ -256,10 +256,24 @@
     prop-types "^15.7.2"
     react-is "^17.0.2"
 
-"@mui/core-downloads-tracker@^5.13.3":
-  version "5.13.3"
-  resolved "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-5.13.3.tgz"
-  integrity sha512-w4//nRIi9fiMow/MmhkForOezd8nc229EpSZZ5DzwpJNOmAXwypFTapOUVAGTUQiTJyeZXUNbQqYuUIrIs2nbg==
+"@mui/base@5.0.0-beta.4":
+  version "5.0.0-beta.4"
+  resolved "https://registry.npmjs.org/@mui/base/-/base-5.0.0-beta.4.tgz"
+  integrity sha512-ejhtqYJpjDgHGEljjMBQWZ22yEK0OzIXNa7toJmmXsP4TT3W7xVy8bTJ0TniPDf+JNjrsgfgiFTDGdlEhV1E+g==
+  dependencies:
+    "@babel/runtime" "^7.21.0"
+    "@emotion/is-prop-valid" "^1.2.1"
+    "@mui/types" "^7.2.4"
+    "@mui/utils" "^5.13.1"
+    "@popperjs/core" "^2.11.8"
+    clsx "^1.2.1"
+    prop-types "^15.8.1"
+    react-is "^18.2.0"
+
+"@mui/core-downloads-tracker@^5.13.3", "@mui/core-downloads-tracker@^5.13.4":
+  version "5.13.4"
+  resolved "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-5.13.4.tgz"
+  integrity sha512-yFrMWcrlI0TqRN5jpb6Ma9iI7sGTHpytdzzL33oskFHNQ8UgrtPas33Y1K7sWAMwCrr1qbWDrOHLAQG4tAzuSw==
 
 "@mui/icons-material@^5.6.0":
   version "5.6.0"
@@ -267,6 +281,22 @@
   integrity sha512-2GDGt+/BbwM3oVkF84b9FFKQdQ9TxBJIRnTwT99vO2mimdfJaojxMRB2lkysm9tUY4HOf0yoU6O//X6GTC0Zhw==
   dependencies:
     "@babel/runtime" "^7.17.2"
+
+"@mui/joy@^5.0.0-alpha.83":
+  version "5.0.0-alpha.83"
+  resolved "https://registry.npmjs.org/@mui/joy/-/joy-5.0.0-alpha.83.tgz"
+  integrity sha512-H5Xg3eKapt8nAteBpMTdeLQk1tpHlQxq7i+1B+8Q+B2dP3ItuH6XIK6VZhFJIp1QGcD5XnGyGN0KHYW/5KNlfA==
+  dependencies:
+    "@babel/runtime" "^7.21.0"
+    "@mui/base" "5.0.0-beta.4"
+    "@mui/core-downloads-tracker" "^5.13.4"
+    "@mui/system" "^5.13.2"
+    "@mui/types" "^7.2.4"
+    "@mui/utils" "^5.13.1"
+    clsx "^1.2.1"
+    csstype "^3.1.2"
+    prop-types "^15.8.1"
+    react-is "^18.2.0"
 
 "@mui/lab@^5.0.0-alpha.77":
   version "5.0.0-alpha.77"
@@ -404,7 +434,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@popperjs/core@^2.11.5", "@popperjs/core@^2.11.7":
+"@popperjs/core@^2.11.5", "@popperjs/core@^2.11.7", "@popperjs/core@^2.11.8":
   version "2.11.8"
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.8.tgz"
   integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
